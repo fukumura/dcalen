@@ -1,0 +1,31 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: dcalen_development
+  pool: 5
+  username: dbdev
+  password: Ahthoo8i
+  host: localhost
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: dcalen_test
+  pool: 5
+  username: dbtest
+  password: Iusai9za
+  host: localhost
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  pool: 5
+  username: root
+  password:
+  host: localhost
+  database: dcalen_production
+  username: dbprod
+  password: <%= ENV['DCALEN_DATABASE_PASSWORD'] %>
