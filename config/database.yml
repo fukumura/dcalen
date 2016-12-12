@@ -5,7 +5,7 @@ development:
   database: dcalen_development
   pool: 5
   username: dbdev
-  password: Ahthoo8i
+  password: **********
   host: localhost
 
 test:
@@ -15,7 +15,7 @@ test:
   database: dcalen_test
   pool: 5
   username: dbtest
-  password: Iusai9za
+  password: **********
   host: localhost
 
 production:
@@ -24,7 +24,7 @@ production:
   reconnect: false
   pool: 5
   username: root
-  password:
+  password: **********
   host: localhost
   database: dcalen_production
   username: dbprod
