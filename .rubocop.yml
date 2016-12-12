@@ -1,0 +1,132 @@
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/migrate/*'
+    - 'vendor/**/*'
+    - 'db/fixtures/**/*'
+    - 'spec/factories/*'
+  TargetRubyVersion: 2.3
+
+# Align ends corresponding to defs correctly
+Lint/EndAlignment:
+  AlignWith: variable
+
+# Checks that ABC (Assignment Branch Condition) size is not higher than the configured maximum
+Metrics/AbcSize:
+  Max: 25
+
+# Avoid classes longer than some maximum lines of code
+Metrics/ClassLength:
+  Max: 300
+
+# Limit lines to some maximum characters
+Metrics/LineLength:
+  Max: 120
+
+# Avoid methods longer than some maximum lines of code
+Metrics/MethodLength:
+  Max: 20
+
+# Avoid modules longer than some maximum lines of code
+Metrics/ModuleLength:
+  Max: 300
+
+# Align the elements of an array literal if they span more than one line
+Style/AlignArray:
+  Enabled: false
+
+# Use only ascii symbols in comments
+Style/AsciiComments:
+  Enabled: false
+
+# Avoid using {...} for multi-line blocks (multiline chaining is always ugly).
+# Prefer {...} over do...end for single-line blocks
+Style/BlockDelimiters:
+  Enabled: false
+
+# Checks style of children classes and modules
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# Enforces consistent use of `Object#is_a?` or `Object#kind_of?`
+Style/ClassCheck:
+  Enabled: false
+
+# Checks for uses of unidiomatic method names from the Enumerable module
+Style/CollectionMethods:
+  Enabled: true
+  PreferredMethods:
+    collect: 'map'
+    collect!: 'map!'
+    inject: false
+    detect: false
+    find_all: false
+
+# Document classes and non-namespace modules
+Style/Documentation:
+  Enabled: false
+
+# This cop is designed to help upgrade to Ruby 3.0.
+# It will add the comment `# frozen_string_literal: true` to enable frozen string literals
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Favor modifier if/unless usage when you have a single-line body.
+Style/IfUnlessModifier:
+  Enabled: false
+
+# Checks for uses of the lambda literal syntax for single line lambdas,
+# and the method call syntax for multiline lambdas
+Style/Lambda:
+  Enabled: false
+
+# Checks indentation of method calls with the dot operator
+# that span more than one line
+Style/MultilineMethodCallIndentation:
+  Enabled: false
+
+# Checks indentation of binary operations that span more than one line
+Style/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+# Checks for proper usage of fail and raise
+Style/SignalException:
+  Enabled: false
+
+# Enforces the names of some block params
+Style/SingleLineBlockParams:
+  Enabled: false
+
+# Checks that exactly one space is used between a method name
+# and the first argument for method calls without parentheses
+Style/SpaceBeforeFirstArg:
+  Enabled: false
+
+# Checks if uses of quotes match the configured preference
+Style/StringLiterals:
+  Enabled: false
+
+# Checks for trailing comma in array and hash literals
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma
+
+# Favor modifier while/until usage when you have a single-line body
+Style/WhileUntilModifier:
+  Enabled: false
+
+Style/BlockComments:
+  Enabled: false
+
+##################### Rails ##################################
+Rails:
+  Enabled: true
+
+# Prefer all.find_each over all.each
+Rails/FindEach:
+  Enabled: false
+
+# Checks for calls to puts, print, etc.
+Rails/Output:
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'

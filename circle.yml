@@ -1,0 +1,10 @@
+machine:
+  ruby:
+    version: "2.3"
+  environment:
+    RAILS_ENV: test
+
+test:
+  override:
+    - bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml
+    - bundle exec rubocop
