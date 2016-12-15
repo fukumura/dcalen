@@ -3,7 +3,28 @@ $(document).ready(function() {
     // page is now ready, initialize the calendar...
 
     $('#calendar').fullCalendar({
-        // put your options and callbacks here
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+      },
+      navLinks: true,
+      selectable: true,
+      selectHelper: true,
+      select: function(start, end) {
+        var title = prompt('イベントを追加');
+        var eventData;
+        if (title) {
+          eventData = {
+            title: title,
+            start: start,
+            end: end
+          };
+          $('#calendar').fullCalendar('renderEvent', eventData, true);
+        }
+        $('#calendar').fullCalendar('unselect');
+      },
+      editable: true,
     })
 
 });
