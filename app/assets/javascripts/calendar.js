@@ -22,7 +22,8 @@ $(document).ready(function() {
         }
         $('#calendar').fullCalendar('unselect');
       },
-      editable: true,
+      events: '/events.json',
+      editable: true
     });
 
 });
