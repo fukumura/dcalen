@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get 'calendar/index'
   get 'events', to: 'event#show'
   post 'events/create', to: 'event#create'
+  post 'events/update', to: 'event#update'
 end
