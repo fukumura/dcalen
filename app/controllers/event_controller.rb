@@ -31,7 +31,7 @@ class EventController < ApplicationController
   end
 
   def update
-    @event = Event.find(params[:id]);
+    @event = Event.find(params[:id])
     @event.attributes = {
       title: params[:title],
       start: params[:start],
