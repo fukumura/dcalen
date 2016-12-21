@@ -25,6 +25,32 @@ $(document).ready(function() {
       });
     };
 
+    update_event = function(id, title, start, end){
+      $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+        var token;
+        if (!options.crossDomain) {
+          token = $('meta[name="csrf-token"]').attr('content');
+          if (token) {
+            return jqXHR.setRequestHeader('X-CSRF-Token', token);
+          }
+        }
+      });
+      $.ajax({
+        type: "post",
+        url: '/events/update',
+        data: {
+          id: id,
+          title: title,
+          start: start.toISOString(),
+          end: end.toISOString()
+        }
+      }).done(function(data){
+        alert("更新しました!");
+      }).fail(function(data){
+        alert("更新できませんでした。");
+      });
+    };
+
     $('#calendar').fullCalendar({
       header: {
         left: 'prev,next today',
@@ -47,6 +73,12 @@ $(document).ready(function() {
           $('#calendar').fullCalendar('unselect');
           create_event(title, start, end);
         }
+      },
+      eventClick: function(event, element) {
+        var title = prompt('イベントを変更');
+        event.title = title;
+        $('#calendar').fullCalendar('updateEvent', event);
+        update_event(event.id, title, event.start, event.end);
       },
       timezone: 'UTC',
       events: '/events.json',
