@@ -1,15 +1,17 @@
 $(document).ready(function() {
 
-    create_event = function(title, start, end){
-      $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
-        var token;
-        if (!options.crossDomain) {
-          token = $('meta[name="csrf-token"]').attr('content');
-          if (token) {
-            return jqXHR.setRequestHeader('X-CSRF-Token', token);
-          }
+    var prepare = function(options, originalOptions, jqXHR) {
+      var token;
+      if (!options.crossDomain) {
+        token = $('meta[name="csrf-token"]').attr('content');
+        if (token) {
+          return jqXHR.setRequestHeader('X-CSRF-Token', token);
         }
-      });
+      }
+    };
+
+    create_event = function(title, start, end){
+      $.ajaxPrefilter(prepare);
       $.ajax({
         type: "post",
         url: "/events/create",
@@ -26,15 +28,7 @@ $(document).ready(function() {
     };
 
     update_event = function(id, title, start, end){
-      $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
-        var token;
-        if (!options.crossDomain) {
-          token = $('meta[name="csrf-token"]').attr('content');
-          if (token) {
-            return jqXHR.setRequestHeader('X-CSRF-Token', token);
-          }
-        }
-      });
+      $.ajaxPrefilter(prepare);
       $.ajax({
         type: "post",
         url: '/events/update',
