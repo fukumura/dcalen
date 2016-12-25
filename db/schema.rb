@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161218165200) do
+ActiveRecord::Schema.define(version: 20161224091952) do
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.string   "title"
     t.boolean  "disp_flg"
-    t.datetime "start"
-    t.datetime "end"
-    t.string   "allDay"
+    t.datetime "start_at"
+    t.datetime "finish_at"
+    t.string   "all_day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
