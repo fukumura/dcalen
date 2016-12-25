@@ -4,9 +4,9 @@ FactoryGirl.define do
     user_id 1
     title "ほげほげ"
     disp_flg 1
-    start { Date.tomorrow }
-#    end { Date.tomorrow }
-    allDay 0
+    start_at { Date.tomorrow }
+    finish_at { Date.tomorrow }
+    all_day 0
     created_at { Time.now }
     updated_at { Time.now }
 
