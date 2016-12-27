@@ -3,10 +3,10 @@ FactoryGirl.define do
     id 1
     user_id 1
     title "ほげほげ"
-    disp_flg 1
-    start_at { Date.tomorrow }
-    finish_at { Date.tomorrow }
-    all_day 0
+    disp_flg true
+    start_at { Time.now }
+    finish_at { Time.now }
+    all_day false
     created_at { Time.now }
     updated_at { Time.now }
 
@@ -14,5 +14,18 @@ FactoryGirl.define do
       title ""
     end
 
+    trait :ongoing do
+      finish_at {1.hours.ago}
+    end
+
+    trait :available do
+      id 2
+      disp_flg true
+    end
+
+    trait :not_available do
+      id 3
+      disp_flg false
+    end
   end
 end
