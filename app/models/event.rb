@@ -1,8 +1,8 @@
 class Event < ApplicationRecord
   validates :title, presence: true
-  class << self
-    def doing
-      Time.current.between?(start, `end`)
-    end
-  end
+
+  scope :is_available, -> {
+    select('id, title, start_at as start, finish_at as end, all_day as allDay')
+    .where(disp_flg: true)
+  }
 end

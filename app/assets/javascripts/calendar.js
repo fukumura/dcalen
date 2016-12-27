@@ -17,8 +17,8 @@ $(document).ready(function() {
         url: "/events/create",
         data: {
           title: title,
-          start: start.toISOString(),
-          end: end.toISOString()
+          start_at: start.toISOString(),
+          finish_at: end.toISOString()
         }
       }).done(function(data){
         alert("登録しました!");
@@ -35,8 +35,8 @@ $(document).ready(function() {
         data: {
           id: id,
           title: title,
-          start: start.toISOString(),
-          end: end.toISOString()
+          start_at: start.toISOString(),
+          finish_at: end.toISOString()
         }
       }).done(function(data){
         alert("更新しました!");
