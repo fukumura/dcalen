@@ -1,6 +1,6 @@
 class EventController < ApplicationController
   def show
-    @event = Event.is_available
+    @event = Event.for_fullcalendar.is_disp
     respond_to do |format|
       format.json {
         render json:
