@@ -184,6 +184,9 @@ GEM
     seed_dump (3.2.4)
       activerecord (>= 4)
       activesupport (>= 4)
+    simple_form (3.3.1)
+      actionpack (> 4, < 5.1)
+      activemodel (> 4, < 5.1)
     slop (3.6.0)
     sorcery (0.9.1)
       bcrypt (~> 3.1)
@@ -229,6 +232,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   brakeman
   byebug
   factory_girl_rails
@@ -247,6 +251,7 @@ DEPENDENCIES
   rubocop
   sass-rails (~> 5.0)
   seed_dump
+  simple_form
   sorcery
   spring
   spring-watcher-listen (~> 2.0.0)

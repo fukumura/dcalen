@@ -1,0 +1,15 @@
+<%= simple_form_for @user do |f| %>
+
+  <%= f.input :name, label: "名前" %>
+  <%= f.input :email, label: "メールアドレス" %>
+  <%= f.input :password, label: "パスワード" %>
+  <%= f.input :password_confirmation, label: "パスワード（再入力）" %>
+
+  <div class="form-group">
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                users_path, :class => 'btn btn-default' %>
+  </div>
+  </div>
+<% end %>
