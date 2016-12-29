@@ -1,10 +1,14 @@
+inherit_from: .rubocop_todo.yml
 AllCops:
   Exclude:
-    - 'db/schema.rb'
-    - 'db/migrate/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
     - 'vendor/**/*'
-    - 'db/fixtures/**/*'
+    - 'bundle_bin/*'
+    - 'bin/*'
     - 'spec/factories/*'
+    - !ruby/regexp /old_and_unused\.rb$/
   TargetRubyVersion: 2.3
 
 # Align ends corresponding to defs correctly

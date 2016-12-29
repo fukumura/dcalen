@@ -1,4 +1,5 @@
 # Use this setup block to configure all options available in SimpleForm.
+
 SimpleForm.setup do |config|
   config.error_notification_class = 'alert alert-danger'
   config.button_class = 'btn btn-default'
@@ -144,6 +145,6 @@ SimpleForm.setup do |config|
     boolean: :vertical_boolean,
     datetime: :multi_select,
     date: :multi_select,
-    time: :multi_select
+    time: :multi_select,
   }
 end
