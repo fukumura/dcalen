@@ -3,10 +3,9 @@ require 'rails_helper'
 RSpec.describe "users/edit", type: :view do
   before(:each) do
     @user = assign(:user, User.create!(
-      :name => "MyString",
-      :email => "MyString",
-      :password_digest => "MyString",
-      :salt => "MyString"
+      :name => "fukumura",
+      :email => "fukumura.akinori+dcalen1@gmail.com",
+      :password => "testtest",
     ))
   end
 
@@ -19,9 +18,7 @@ RSpec.describe "users/edit", type: :view do
 
       assert_select "input#user_email[name=?]", "user[email]"
 
-      assert_select "input#user_password_digest[name=?]", "user[password_digest]"
-
-      assert_select "input#user_salt[name=?]", "user[salt]"
+      assert_select "input#user_password[name=?]", "user[password]"
     end
   end
 end

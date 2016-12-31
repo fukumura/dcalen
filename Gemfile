@@ -30,6 +30,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5.0.beta2'
   gem 'rspec_junit_formatter'
   gem 'rubocop', require: false
