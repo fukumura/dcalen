@@ -14,6 +14,7 @@ class EventController < ApplicationController
   def create
     event = Event.new
     event.attributes = {
+      user_id: current_user.id,
       title: params[:title],
       start_at: params[:start_at],
       finish_at: params[:finish_at],
